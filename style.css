@@ -1,0 +1,59 @@
+@font-face {
+  font-family: breamcatcher6rg;
+  src: url(FONTS/breamcatcher\ rg.otf);
+}
+@font-face {
+  font-family: Montserrat-Medium;
+  src: url(fonts/Montserrat-Medium.ttf);
+}
+body{
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  background-color: rgba(52, 40, 109, 0.704);
+ 
+}
+
+.btn{
+  background-color: pink;
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, .3);
+  text-decoration: none;
+  color: black;
+  position: relative;
+  overflow: hidden;
+  width: 120px;
+  height: 50px;
+}
+.btn span{
+  position: relative;
+  z-index: 1;
+}
+.hov{
+  text-align: center;
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  font-family: breamcatcher6rg, Montserrat-Medium;
+  font-size: 25px;
+}
+
+.btn::before{
+  content: "";
+  position: absolute;
+  background-color: orangered;
+  width: 0;
+  height: 0;
+  left: var(--xPos);
+  top: var(--yPos);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: width .5s, height .5s;
+}
+.btn:hover::before{
+  width: 300px;
+  height: 300px;
+}
